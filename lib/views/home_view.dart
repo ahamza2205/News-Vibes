@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_vibes/widgets/CategoryCard.dart';
+import 'package:news_vibes/widgets/CategoryListView.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
