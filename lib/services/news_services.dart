@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:news_vibes/models/articale_model.dart';
 
 class NewsServices {
-  final Dio dio;
+  final Dio dio = Dio();
 
-  NewsServices(this.dio);
+  NewsServices();
 
   Future<List<ArticaleModel>> getNews() async {
     Response response = await dio.get(
