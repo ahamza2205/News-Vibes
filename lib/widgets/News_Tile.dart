@@ -21,7 +21,7 @@ class NewsTile extends StatelessWidget {
                   fit: BoxFit.cover,
                 )
               : Image.network(
-                  'https://www.cafonline.com/media/0luhsyfr/al-ahlys-starting-eleven-players-pose-for-the-group-photo-prior-the-caf-champions-league-2nd-qualifications.jpg',
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrjp5jjw8oTsE0TUtUJuo0ahese0svE0JV2Q&s',
                   height: 200,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -31,7 +31,7 @@ class NewsTile extends StatelessWidget {
           height: 12,
         ),
         Text(
-          'article title',
+          articaleModel.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
@@ -44,7 +44,7 @@ class NewsTile extends StatelessWidget {
           height: 8,
         ),
         Text(
-          'sub title the ditail of articl',
+          articaleModel.subTitle ?? '',
           maxLines: 2,
           style: const TextStyle(color: Colors.grey, fontSize: 14),
         )

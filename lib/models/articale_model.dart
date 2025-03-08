@@ -1,6 +1,6 @@
 class ArticaleModel {
   final String? image;
-  final String? title;
+  final String title;
   final String? subTitle;
 
   ArticaleModel(
