@@ -14,30 +14,35 @@ class NewListView extends StatefulWidget {
 
 class _NewListViewState extends State<NewListView> {
   List<ArticaleModel> articles = [];
+
+  bool isLoading = true;
+
   @override
   void initState() {
     super.initState();
-
     getGeneralNews();
   }
 
   Future<void> getGeneralNews() async {
     articles = await NewsServices().getNews();
+    isLoading = false;
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(childCount: articles.length,
-          (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 16.0),
-          child: NewsTile(
-            articaleModel: articles[index],
-          ),
-        );
-      }),
-    );
+    return isLoading
+        ? SliverToBoxAdapter(child: Center(child: CircularProgressIndicator()))
+        : SliverList(
+            delegate: SliverChildBuilderDelegate(childCount: articles.length,
+                (context, index) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 16.0),
+                child: NewsTile(
+                  articaleModel: articles[index],
+                ),
+              );
+            }),
+          );
   }
 }
